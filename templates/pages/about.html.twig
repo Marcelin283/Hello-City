@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'About Us | '~ parent()%}
+
+{% block body %}
+
+    <img src="{{ asset('/images/iit.png') }}" alt="IIT" class="my-12 rounded-full shadow-md">
+
+    <h1 class="text-gray-700">Built with <span class="text-blue-500"> &hearts; </span> by ADEDZE and TOUKA.</h1>
+
+    <p class="mt-5">
+        <a href="{{path('app_home')}}" class="text-indigo-500 hover:text-red-600 underline"> Revenir à la page d'accueil</a>
+    </p>
+
+{% endblock %}

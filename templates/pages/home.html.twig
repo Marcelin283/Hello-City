@@ -1,17 +1,12 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Hello City!{% endblock %}
+
 {% block body %}
     
-    <h1>Hello from Lomé!</h1>
+    <img src="{{ asset('/images/togo.png') }}" alt="Equipiers" class="h-32 mt-12 rounded shadow-md">
+    <h1 class="mt-5 text-3xl sm: text-5xl font-semibold text-indigo-600">Hello from Lomé!</h1>
 
-    <p>It's currently {{ 'now'|date('h:i A')}}.</p>
-
-
-    <footer>
-        <p>
-            &copy; Copyright {{ 'now'|date('Y')}}  &middot;
-            <a href="#">About Us</a>
-        </p>
-    </footer>
+    <p class="text-lg text-gray-800">It's currently {{ 'now'|date('h:i A')}}.</p>
 
 {% endblock %}
