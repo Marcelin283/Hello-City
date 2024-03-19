@@ -4,14 +4,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Hello City{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🇹🇬</text></svg>">
         {% block stylesheets %}
             <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            <style>
+                body {
+                    background: linear-gradient(135deg, #8E2DE2, #4A00E0, #00FFC1, #00FFC1, #00C3FF);
+                    background-size: 600% 600%;
+                    animation: gradientBG 10s ease infinite;
+                }
+                
+                @keyframes gradientBG {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+            </style>
         {% endblock %}
     </head>
     <body class="flex flex-col justify-between items-center min-h-screen">
@@ -20,13 +34,11 @@
             
             {% endblock %}
         </main>
-
+        <footer class="my-6">
+            <p class="text-gray-400">
+                &copy; Copyright {{ 'now'|date('Y')}}  &middot;
+                <a href="{{path('app_about')}}" class="text-indigo-500 hover:text-red-600 underline">About Us</a>
+            </p>
+        </footer>
     </body>
-
-    <footer class="my-6">
-        <p class="text-gray-400">
-            &copy; Copyright {{ 'now'|date('Y')}}  &middot;
-            <a href="{{path('app_about')}}" class="text-indigo-500 hover:text-red-600 underline">About Us</a>
-        </p>
-    </footer>
 </html>
